@@ -75,7 +75,11 @@ class ComponentA {
 ```
 
 ### Remarks
+
+#### Number of parameters
 If the registered callback expects a certain number of parameters and if the method (`do()` or `get()`) is called with an insufficient number of parameters, the method call to the callback silently fails. On the other hand, if the method (`do()` or `get()`) is called with an exceeding number of parameters over the callback's parameters, the method call to the callback will be performed. This is by the design of AutoHotkey. To avoid silent failures of callbacks, when a number of passed parameters is uncertain from the callback function, use the variadic function technique such as `myCallback( aParams* )`.
+#### Adding identical callbacks
+Currently, identical functions can be registered for a particular hook, meaning if the same function is added twice, the function will be called twice, which produce duplicated calls. This behavior can be a subject to change.
 
 ## Notes
 This is how WordPress hosts so many plugins and themes and lets them customize the program behavior.
