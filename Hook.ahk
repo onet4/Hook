@@ -84,12 +84,12 @@ class Hook {
             aParams.InsertAt( 1, v )
             for _i, _fn in this.oHooks[ sNameHook ] {
                 if strlen( _fn ) {
-                    v := Func( _fn ).Call( aParams* )
+                    aParams.1 := Func( _fn ).Call( aParams* )
                     continue
                 }
-                v := _fn.Call( aParams* )
+                aParams.1 := _fn.Call( aParams* )
             }
-            return v
+            return aParams.1
         }
 
     }
