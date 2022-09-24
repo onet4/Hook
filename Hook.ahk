@@ -2,7 +2,7 @@
  * Provides a hook system
  *
  * @see https://github.com/onet4/Hook
- * @version 1.1.0
+ * @version 1.2.0
  */
 class Hook {
 
