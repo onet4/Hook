@@ -29,7 +29,7 @@ $oHook.addAction( "do-something", "DoSomething" ) ; Imagine these addAction() ar
 $oHook.addAction( "do-something", "DoSomethingElse" )
 
 ; Trigger the 'do-somthing' action hook
-$oHook.do( "do-something" )
+$oHook.do( "do-something", "Hi!" )
 
 DoSomething( v ) {
     msgbox % v
@@ -38,25 +38,25 @@ DoSomethingElse( v ) {
     ; do something such as creating a log file
 }
 ```
- #### #2 Filter Hooks
- ```autohotkey
+#### #2 Filter Hooks
+```autohotkey
 #Include <Hook>
 global $oHook := new Hook() ; Reommended to make it super global to be accessed from anywhere
 
- ; Register callbacks to the 'get-something' filter hook (name it whatever you like in your actual script)
- $oHook.addFilter( "get-something", "GetSomething" ) ; Imagine these addFilter() are done in multpile places
- $oHook.addFilter( "get-something", "GetSomethingElse" )
+; Register callbacks to the 'get-something' filter hook (name it whatever you like in your actual script)
+$oHook.addFilter( "get-something", "GetSomething" ) ; Imagine these addFilter() are done in multpile places
+$oHook.addFilter( "get-something", "GetSomethingElse" )
 
- ; Trigger the 'get-something' filter hook and receive a value customized by callbacks
- msgbox % $oHook.get( "get-something" )
+; Trigger the 'get-something' filter hook and receive a value customized by callbacks
+msgbox % $oHook.get( "get-something", "Hello!" )
 
- GetSomething( v ) {
+GetSomething( v ) {
     return v "`nAdded by " A_ThisFunc
- }
- GetSomethingModified( v ) {
+}
+GetSomethingElse( v ) {
     return v "`nModified by " A_ThisFunc
- }
- ```
+}
+```
 #### #3 Registering class methods
 ```autohotkey
 #Include <Hook>
@@ -69,7 +69,7 @@ class ComponentA {
         $oHook.addAction( "do-whatever", ObjBindMethod( this, "doWhatever" ) )
     }
     doWhatever( sFirst, sSecond ) {
-        mstgbox % sFirst "`n" sSecond
+        msgbox % sFirst "`n" sSecond
     }
 }
 ```
