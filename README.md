@@ -9,7 +9,7 @@ There are two types of hooks to be used with this library: _action_ and _filter_
 
 To run additional code on top of the upstream code execution, _action_ hooks are used and to modify values given by the upstream, _filter_ hooks are used. You give names to  those hooks (events) and trigger them whenever needed so that associated callbacks will be called.
 
-This allows different parts of code to interact with each other without using extra global variables. This becomes helpful to organize code structure and files especially for mid-sized or large scripts and give sustainability plus scalability to the codebase.
+This allows different parts of code to interact with each other without using extra global variables. This becomes helpful to organize code structure and files, especially for mid-sized or large scripts, and gives sustainability plus scalability to the codebase.
 
 ## Usage
 ### Steps
