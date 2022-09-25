@@ -5,11 +5,11 @@ Provides a hook system within your AutoHotkey (v1) script.
 This is an AutoHotkey v1 class meant to serve as a library that provides a hook system throughout the script execution, by letting subsets of code (let's call them components) interact with each other. In other words, you can design your script to host components serving as middleware and make them easy to be removed from or added to your script like LEGOs.
 
 ## Description
-There are two types of hooks to be used with this library: _action_ and _filter_. Arbitrary names can be given to those hooks (or you may call them events) and triggered at the desired timing. When they are called, the registered callback functions will be triggered along. Those callbacks serve as middleware to interfere with the upstream of code execution so that custom behaviors can be added on top of the default behavior or default values that particular functions provide can be modified.
+There are two types of hooks to be used with this library: _action_ and _filter_. Arbitrary names can be given to those hooks (or you may call them events) and triggered at the desired timing. When they are called, the registered callback functions will be triggered along with passed parameters. Those callbacks serve as middleware to interfere with the upstream of code execution so that custom behaviors can be added on top of the default behavior or default values that particular functions provide can be modified.
 
 To run additional code on top of the upstream code execution, _action_ hooks are used and to modify values given by the upstream, _filter_ hooks are used. You give names to  those hooks (events) and trigger them whenever needed so that associated callbacks will be called.
 
-This allows different parts of code to interact with each other without using extra global variables. This becomes helpful to organize code structure and files with components that become easy to remove or add groups of code, especially for mid-sized or large scripts.
+This allows different parts of code to interact with each other without using extra global variables. This becomes helpful to organize code structure and files especially for mid-sized or large scripts and give sustainability plus scalability to the codebase.
 
 ## Usage
 ### Steps
