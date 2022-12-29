@@ -22,7 +22,7 @@ This allows different parts of code to interact with each other without using ex
 #### #1 Action Hooks
 ```autohotkey
 #Include <Hook>
-global $oHook := new Hook() ; Reommended to make it super global to be accessed from anywhere
+global $oHook := new Hook() ; Recommended to make it super global to be accessed from anywhere
 
 ; Register callbacks to the 'do-something' action hook (name it whatever you like in your actual script)
 $oHook.addAction( "do-something", "DoSomething" ) ; Imagine these addAction() are done in some other components
@@ -41,7 +41,7 @@ DoSomethingElse( v ) {
 #### #2 Filter Hooks
 ```autohotkey
 #Include <Hook>
-global $oHook := new Hook() ; Reommended to make it super global to be accessed from anywhere
+global $oHook := new Hook() ; Recommended to make it super global to be accessed from anywhere
 
 ; Register callbacks to the 'get-something' filter hook (name it whatever you like in your actual script)
 $oHook.addFilter( "get-something", "GetSomething" ) ; Imagine these addFilter() are done in multpile places
@@ -60,7 +60,7 @@ GetSomethingElse( v ) {
 #### #3 Registering class methods
 ```autohotkey
 #Include <Hook>
-global $oHook := new Hook() ; Reommended to make it super global to be accessed from anywhere
+global $oHook := new Hook() ; Recommended to make it super global to be accessed from anywhere
 
 $oComponentA := new ComponentA   ; Assume this loads the component A
 $oHook.do( "do-whatever", "This is the first parameter value.", "This is the second parameter value." )
@@ -77,7 +77,7 @@ class ComponentA {
 #### #4 Passing parameters from callback registerers
 ```autohotkey
 #Include <Hook>
-global $oHook := new Hook() ; Reommended to make it super global to be accessed from anywhere
+global $oHook := new Hook() ; Recommended to make it super global to be accessed from anywhere
 
 ; Normally trigger an action hook
 $oHook.addAction( "do-action-normally", Func( "DemonstrateParameterInjectionByAction" ) )
@@ -113,7 +113,7 @@ DemonstrateParameterInjectionByFilter( aParams* ) {
 #### #5 Load components based on settings
 ```autohotkey
 #Include <Hook>
-global $oHook := new Hook() ; Reommended to make it super global to be accessed from anywhere
+global $oHook := new Hook() ; Recommended to make it super global to be accessed from anywhere
 
 ; Assume the settings are loaded from somewhere
 oSettings := { "Components": { "Logger": true
